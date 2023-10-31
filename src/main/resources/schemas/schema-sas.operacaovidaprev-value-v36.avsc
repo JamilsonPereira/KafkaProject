@@ -1,0 +1,570 @@
+{
+  "fields": [
+    {
+      "name": "tipo_seguro",
+      "type": {
+        "name": "TipoSeguro",
+        "symbols": [
+          "VIDA",
+          "PREV"
+        ],
+        "type": "enum"
+      }
+    },
+    {
+      "name": "client_id",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "codigo_rastreio",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "operacao",
+      "type": {
+        "name": "Operacao",
+        "symbols": [
+          "CONTRATACAO",
+          "CANCELAMENTO",
+          "ALTERACAO_CADASTRAL",
+          "ENDOSSO_EMAIL",
+          "ENDOSSO_ENDERECO",
+          "RENOVACAO",
+          "ENDOSSO_VALOR_CAPITAL",
+          "CONTRATACAO_PREV"
+        ],
+        "type": "enum"
+      }
+    },
+    {
+      "default": null,
+      "name": "url_callback",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "default": null,
+      "name": "contratacao_vida",
+      "type": [
+        "null",
+        {
+          "fields": [
+            {
+              "name": "id_produto",
+              "type": "long"
+            },
+            {
+              "name": "codigo_parceiro",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "nome_participante_principal",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "data_nascimento_participante_principal",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "sexo_participante_principal",
+              "type": {
+                "name": "SexoParticipantePrincipal",
+                "symbols": [
+                  "M",
+                  "F"
+                ],
+                "type": "enum"
+              }
+            },
+            {
+              "name": "cpf_participante_principal",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "renda_mensal_participante_principal",
+              "type": "double"
+            },
+            {
+              "name": "codigo_ocupacao_principal_participante_principal",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "periodicidade_pagamento",
+              "type": {
+                "name": "PeriodicidadePagamento",
+                "symbols": [
+                  "M",
+                  "B",
+                  "T",
+                  "Q",
+                  "S",
+                  "A"
+                ],
+                "type": "enum"
+              }
+            },
+            {
+              "name": "id_plano",
+              "type": "long"
+            },
+            {
+              "default": null,
+              "name": "peso",
+              "type": [
+                "null",
+                "double"
+              ]
+            },
+            {
+              "default": null,
+              "name": "altura",
+              "type": [
+                "null",
+                "double"
+              ]
+            },
+            {
+              "name": "cep",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "logradouro",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "numero_endereco",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "bairro",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "default": null,
+              "name": "complemento",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "default": null,
+              "name": "ddd_telefone_celular",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "default": null,
+              "name": "telefone_celular",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "default": null,
+              "name": "email",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "herdeiros_conforme_legislacao",
+              "type": "boolean"
+            },
+            {
+              "name": "meio_Pagamento",
+              "type": {
+                "name": "MeioPagamento",
+                "symbols": [
+                  "DCC",
+                  "FCP",
+                  "CAR",
+                  "PIX",
+                  "REP"
+                ],
+                "type": "enum"
+              }
+            },
+            {
+              "name": "dia_vencimento",
+              "type": "int"
+            },
+            {
+              "name": "gerar_boleto_primeira_parcela",
+              "type": "boolean"
+            },
+            {
+              "default": null,
+              "name": "corretor_principal",
+              "type": [
+                "null",
+                {
+                  "fields": [
+                    {
+                      "name": "codigo_estrutura_venda",
+                      "type": {
+                        "avro.java.string": "String",
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "name": "percentualParticipacao",
+                      "type": "double"
+                    }
+                  ],
+                  "name": "CorretorContratacao",
+                  "type": "record"
+                }
+              ]
+            },
+            {
+              "default": null,
+              "name": "data_hora_assinatura",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "default": null,
+              "name": "local_assinatura",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "default": null,
+              "name": "codigo_empresa",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "default": null,
+              "name": "data_inicio_vigencia",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "name": "ContratacaoVida",
+          "type": "record"
+        }
+      ]
+    },
+     {
+          "default": null,
+          "name": "codigo_parceiro",
+          "type": [
+          "null",
+            {
+              "avro.java.string": "String",
+              "type": "string"
+            }
+          ]
+        },
+    {
+      "default": null,
+      "name": "dados_operacao",
+      "type": [
+      "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "cancelamento",
+      "type": [
+        "null",
+        {
+          "fields": [
+            {
+              "name": "id_contrato",
+              "type": "long"
+            },
+            {
+              "name": "codigo_parceiro",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "data_inicio_vigencia",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            }
+          ],
+          "name": "Cancelamento",
+          "type": "record"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "alteracao_cadastral",
+      "type": "null"
+    },
+    {
+      "default": null,
+      "name": "endosso_endereco",
+      "type": [
+        "null",
+        {
+          "fields": [
+            {
+              "name": "id_contrato",
+              "type": "long"
+            },
+            {
+              "name": "codigo_parceiro",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "cep",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "logradouro",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "default": null,
+              "name": "complemento",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "numero",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "default": null,
+              "name": "bairro",
+              "type": [
+                "null",
+                {
+                  "avro.java.string": "String",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "uf",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "municipio",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            }
+          ],
+          "name": "EndossoEndereco",
+          "type": "record"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "endosso_email",
+      "type": [
+        "null",
+        {
+          "fields": [
+            {
+              "name": "id_contrato",
+              "type": "long"
+            },
+            {
+              "name": "codigo_parceiro",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "email_cobranca",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            }
+          ],
+          "name": "EndossoEmail",
+          "type": "record"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "renovacao",
+      "type": [
+        "null",
+        {
+          "fields": [
+            {
+              "name": "id_contrato",
+              "type": "long"
+            },
+            {
+              "name": "codigo_parceiro",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "data_fim_vigencia",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            }
+          ],
+          "name": "Renovacao",
+          "type": "record"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "endosso_valor_capital",
+      "type": [
+        "null",
+        {
+          "fields": [
+            {
+              "name": "id_contrato",
+              "type": "long"
+            },
+            {
+              "name": "codigo_parceiro",
+              "type": {
+                "avro.java.string": "String",
+                "type": "string"
+              }
+            },
+            {
+              "name": "coberturas",
+              "type": {
+                "items": {
+                  "fields": [
+                    {
+                      "name": "valorCapital",
+                      "type": "double"
+                    },
+                    {
+                      "name": "id_cobertura",
+                      "type": "long"
+                    }
+                  ],
+                  "name": "CoberturaEndossada",
+                  "type": "record"
+                },
+                "type": "array"
+              }
+            }
+          ],
+          "name": "EndossoValorCapital",
+          "type": "record"
+        }
+      ]
+    }
+  ],
+  "name": "OperacaoVidaPrev",
+  "namespace": "br.com.sulamerica.vep.eventos.schema",
+  "type": "record"
+}

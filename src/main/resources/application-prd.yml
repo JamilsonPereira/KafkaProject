@@ -1,0 +1,34 @@
+spring:
+  kafka:
+    bootstrap-servers: pkc-4yyd6.us-east1.gcp.confluent.cloud:9092
+    properties:
+      '[schema.registry.url]': https://psrc-4rw99.us-central1.gcp.confluent.cloud
+      '[sasl.mechanism]': PLAIN
+      '[security.protocol]': SASL_SSL
+      '[ssl.endpoint.identification.algorithm]': https
+      '[basic.auth.credentials.source]': USER_INFO
+
+api-vendas:
+  baseUrl: https://services-cvp.paas.sulamerica.br/services/rest
+  timeout: 180000
+
+cofresenha:
+  cluster-kafka: 17471
+  schema-registry-kafka: 17466
+
+br:
+  sulamerica:
+    cofresenha:
+      oauth-request-cofres:
+        - id: 17471
+          url: https://acessourgente.sulamerica.br/iso/coe/senha/17471
+          consumer-key: b3ddf56845668a5ff5353a5282ecae7a06446ba81
+          consumer-secret: 0d13d76bc5fa04d6257b488d535480d1
+          access-token: ee350321bc4c76a9d2308fb201df2a3006446bbce
+          access-token-secret: 89296a6e4ba760bfd20633b4e65647bb
+        - id: 17466
+          url: https://acessourgente.sulamerica.br/iso/coe/senha/17466
+          consumer-key: b3ddf56845668a5ff5353a5282ecae7a06446ba81
+          consumer-secret: 0d13d76bc5fa04d6257b488d535480d1
+          access-token: ee350321bc4c76a9d2308fb201df2a3006446bbce
+          access-token-secret: 89296a6e4ba760bfd20633b4e65647bb

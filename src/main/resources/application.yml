@@ -1,0 +1,23 @@
+spring:
+  kafka:
+    properties:
+      '[specific.avro.reader]': true
+      '[spring.deserializer.key.delegate.class]': org.apache.kafka.common.serialization.StringDeserializer
+      '[spring.deserializer.value.delegate.class]': io.confluent.kafka.serializers.KafkaAvroDeserializer
+    listener:
+      ack-mode: MANUAL
+    consumer:
+      auto-offset-reset: earliest
+      max-poll-records: 1
+      enable-auto-commit: false
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+    producer:
+      acks: all
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+
+operacaovidaeprev:
+  group-id: operacao-vida-e-prev-consumer
+  topic: vida-e-prev.venda-e-pos-venda
+  resultado-topic: vida-e-prev.venda-e-pos-venda.resultado

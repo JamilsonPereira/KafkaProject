@@ -1,0 +1,86 @@
+{
+  "type": "record",
+  "namespace": "br.com.sulamerica.vep.eventos.schema",
+  "name": "RespostaVidaPrev",
+  "fields": [
+    {
+      "name": "tipo_seguro",
+      "type": {
+        "type": "enum",
+        "name": "TipoSeguro",
+        "symbols": [
+          "VIDA",
+          "PREV"
+        ]
+      }
+    },
+    {
+      "name": "client_id",
+      "type": "string"
+    },
+    {
+      "name": "codigo_rastreio",
+      "type": "string"
+    },
+    {
+      "name": "operacao",
+      "type": {
+        "type": "enum",
+        "name": "Operacao",
+        "symbols": [
+          "CONTRATACAO",
+          "CANCELAMENTO",
+          "ALTERACAO_CADASTRAL",
+          "ENDOSSO_EMAIL",
+          "ENDOSSO_ENDERECO",
+          "RENOVACAO",
+          "ENDOSSO_VALOR_CAPITAL"
+        ]
+      }
+    },
+    {
+      "name": "resultado",
+      "type": {
+        "type": "record",
+        "name": "Resultado",
+        "fields": [
+          {
+            "name": "token",
+            "type": [
+              "null",
+              "long"
+            ],
+            "default": null
+          },
+          {
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "name": "data_processamento",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "id_contrato",
+            "type": [
+              "null",
+              "long"
+            ],
+            "default": null
+          },
+          {
+            "name": "lista_criticas",
+            "type": {
+              "type": "array",
+              "items": "string"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
